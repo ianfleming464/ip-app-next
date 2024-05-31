@@ -4,7 +4,7 @@ const supabaseUrl = process.env.PROJECT_URL;
 const supabaseAnonKey = process.env.SERVICE_KEY;
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
+console.log('Supabase: ', supabase);
 export async function TrademarkInfo() {
   let { data, error } = await supabase.from('trademark-info').select('*');
   if (error) console.error('Error: ', error);
